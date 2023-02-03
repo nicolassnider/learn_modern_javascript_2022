@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>checkValidity() example</title>
+	<script>
+		console.log('a')
+      function checkValidity() {
+		debugger;
+        var form = document.querySelector('form');
+        if (form.checkValidity()) {
+          alert('Form is valid!');
+        } else {
+          alert('Form is invalid!');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="username" required/>
+      <button type="button" onclick="checkValidity()">Check</button>
+    </form>
+    
+  </body>
+</html>

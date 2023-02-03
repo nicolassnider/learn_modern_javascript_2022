@@ -1,0 +1,56 @@
+<!-- Path: 12_form_validation\075_storage_api.html -->
+<!-- sessionstorage sample -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Web Storage API</title>
+	</head>
+	<body>
+		<h1>Web Storage API</h1>
+		<p>Click the button to save data to session storage.</p>
+		<p id="result">Click the button to save data to session storage.</p>
+		<p>
+			<input
+				type="button"
+				value="Save to Session Storage"
+				onclick="save()"
+			/>
+		</p>
+		<p>
+			<input
+				type="button"
+				value="Load from Session Storage"
+				onclick="load()"
+			/>
+		</p>
+		<p>
+			<input
+				type="button"
+				value="Clear Session Storage"
+				onclick="clear()"
+			/>
+		</p>
+	</body>
+	<script>
+		function save() {
+			sessionStorage.setItem('name', 'John');
+			sessionStorage.setItem('age', '30');
+			document.getElementById('result').innerHTML =
+				'Data saved to session storage.';
+		}
+		function load() {
+			document.getElementById('result').innerHTML =
+				'name: ' +
+				sessionStorage.getItem('name') +
+				', age: ' +
+				sessionStorage.getItem('age');
+		}
+		function clear() {
+			sessionStorage.clear();
+			document.getElementById('result').innerHTML =
+				'Session storage cleared.';
+		}
+	</script>
+</html>
